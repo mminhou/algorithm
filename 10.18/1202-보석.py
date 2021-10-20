@@ -22,4 +22,3 @@ for bagWeight in bagList:
         break
 
 print(-result)
-a
