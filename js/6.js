@@ -95,12 +95,52 @@ function solution6(str) {
 }
 
 function solution7(a, b) {
-
+    let answer = "YES"
+    let m = new Map()
+    for (let i of a) {
+        if (m.has(i)) m.set(i, m.get(i)+1)
+        else m.set(i, 1)
+    }
+    for (let i of b) {
+        if (!m.has(i) || m.has(i) == 0) answer = "NO"
+        m.set(i, m.get(i)-1)
+    }
+    console.log(answer)
 }
+
+function solution8(a, b) {
+    function compareMap(map1, map2) {
+        if (map1.size !== map2.size) return false
+        for (let [key, val] of map1) {
+            if (!map2.has(key) || map2.get(key) !== val) return false
+        }
+        return true
+    }
+    let n = a.length
+    let m = b.length
+    let mMap = new Map()
+    let answer = 0
+    for (let i=0; i<m; i++) {
+        if (mMap.has(i)) mMap.set(i, mMap.get(i)+1)
+        else mMap.set(i, 1)
+    }
+    for (let i=0; i<n-m; i++) {
+        let temp = a.slice(i, i+3)
+        let check = true
+        for (let j=0; j<temp.length; j++) {
+            if (!mMap.has(j) || mMap.get(i) == 0) check = false
+            mMap.set(i, mMap.get(i)-1)
+        }
+        if (check) answer += 1
+    }
+    console.log(answer)
+}
+
 // solution([1, 3, 5], [2, 3, 6, 7, 9])
 // solution2([1, 3, 9, 5, 2], [3, 2, 5, 7, 8])
 // solution3([1, 2, 1, 3, 1, 1, 1, 2], 6)
 // solution4([1, 3, 1, 2, 3], 5)
 // solution5([12, 15, 11, 20, 25, 10, 20, 19, 13, 15], 3)
 // solution6("BACBACCACCBDEDE")
-solution7("AbaAeCe", "baeeACA")
+// solution7("AbaAeCe", "baeeACA")
+solution8("bacaAacba", "abc")
