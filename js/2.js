@@ -21,7 +21,6 @@ function solution3(s) {
         // let num = i.charCodeAt();
         // if (65 <= num && num <= 90) cnt++
         if (i === i.toUpperCase()) cnt++
-
     }
     console.log(cnt)
 }

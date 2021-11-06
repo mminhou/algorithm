@@ -30,8 +30,10 @@ arr.shift()
 // 검색
 
 // array 요소 문자열로 합치기
-
+console.log(arr)
+console.log(arr.includes('f'))
 const res = arr.join('')
 console.log(res)
+
 
 //

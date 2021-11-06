@@ -78,10 +78,27 @@ function solution5(s) {
 
 function solution6(n, m) {
     let arr = []
+    // v => 유사배열의 value (초기엔 undefined로 설정) i 는 인덱스 번호
     let q = Array.from({length: n}, (v, i) => i+1)
+    while (q.length != 1) {
+        for (let i=1; i<m; i++) q.push(q.shift())
+        q.shift()
+    }
+    console.log(q[0])
+}
 
-
-
+function solution7(a, b) {
+    let answer = true
+    let q = a.split('')
+    for (let s of b) {
+        if (q.includes(s)) {
+            if (q.shift() != s) {
+                answer = false
+            }
+        }
+    }
+    if (q.length > 0) answer = false
+    console.log(answer)
 }
 
 // solution("(()(()))()")
@@ -89,4 +106,5 @@ function solution6(n, m) {
 // solution3([[0,0,0,0,0], [0,0,1,0,3], [0,2,5,0,1], [4,2,4,4,2], [3,5,1,3,1]], [1, 5, 3, 5, 1, 2, 1, 4])
 // solution4("352+*9-")
 // solution5("()(((()())(())()))(())")
-solution6(8, 3)
+// solution6(8, 3)
+solution7("CBA", "CBDAGE")
