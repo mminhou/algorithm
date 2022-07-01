@@ -100,4 +100,4 @@ function solution5(arr, m) {
 // solution2([9, 8, 7, 1], 3)
 // solution3([9, 7, 9, 1], 2)
 // solution4([1, 1, 2, 2], 4)
-solution5([9, 8, 7, 1], 2)
+// solution5([9, 8, 7, 1], 2)

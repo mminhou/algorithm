@@ -29,6 +29,7 @@ function solution3(arr, n) {
     let left = 0
     let right = 0
     let init = arr[0]
+
     while (left <= right && right < arr.length) {
         if (init < n) {
             right++

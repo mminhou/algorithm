@@ -1,5 +1,17 @@
 function solution(s) {
     let stk = []
+
+    // s.forEach((ele) => {
+    //     if (ele === '(') stk.push(')')
+    //     else {
+    //         if (stk.length) {
+    //             stk.pop();
+    //         } else {
+    //             console.log('No');
+    //             return false
+    //         }
+    //     }
+    // })
     for (let i of s) {
         if (i == '(') stk.push('(')
         else {

@@ -1,39 +1,29 @@
-const arr = ['a', 'b', 'c']
-// array의 첫요소와 마지막 요소 ------------------------------
-// console.log(arr[0])
-// console.log(arr[arr.length-1])
+function solution(required, plan) {
+  while (plan.length > 0) {
+    const target = plan.shift();
+    if (required.includes(target)) {
 
-// loop -------------------------------------------------
-// for (let i=0; i < arr.length; i++) {
-//     console.log(arr[i])
-// }
+    }
+  }
+}
 
-// for (let a of arr) {
-//     console.log(a)
-// }
+// "6 10 21" 과 같이 주어졌을때, 조합으로 가장 큰수를 찾기
+function solution2(numbers) {
+  numbers.sort((num1, num2) => {
+    (num2.toString() + num1.toString()) - (num1.toString() + num2.toString())
+  });
 
-// arr.forEach((e, index) => console.log(e, index))
+  return numbers[0] === 0 ? "0" : numbers.join("");
+}
 
-// Push  -------------------------------------------------
-arr.push('d', 'e', 'f')
-arr.pop()
-// 앞부분부터 추가, 삭제  -------------------------------------------------
-arr.unshift('hi')
-arr.shift()
+// 문자열 압축
+// ababcdcdababcdcd
+function solution3(str) {
 
-// 특정위치 요소 삭제 -> number 지정 안하면 전체삭제, option은 요소 삭제 후 추가할 수 있음 -------------------------------------------------
-// arr.splice(1, number, option)
+  for (let i=1; i<str.length/2; i+=1) {
+    
+  }
 
-// combine two array
-// arr.concat(['a'])
+}
 
-// 검색
-
-// array 요소 문자열로 합치기
-console.log(arr)
-console.log(arr.includes('f'))
-const res = arr.join('')
-console.log(res)
-
-
-//
+solution3("ababcdcdababcdcd");

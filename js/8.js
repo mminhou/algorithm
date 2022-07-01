@@ -49,7 +49,7 @@ function solution5(arr) {
     let sortArr = arr.slice()
     sortArr.sort((x, y) => x - y)
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] != sortArr[i]) answer.push(i + 1)
+        if (arr[i] !== sortArr[i]) answer.push(i + 1)
     }
     console.log(answer)
     // let left = undefined
@@ -115,6 +115,7 @@ function solution8(arr) {
 }
 
 function solution9(n, arr) {
+    // binary search
     let answer;
     arr.sort((x,y)=> x-y)
     let lt = 0, rt = arr.length-1
